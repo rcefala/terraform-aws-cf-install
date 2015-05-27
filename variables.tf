@@ -18,6 +18,7 @@ variable "cf1_az" {
         ap-southeast-1 = "ap-southeast-1a"
         ap-southeast-2 = "ap-southeast-2a"
         eu-west-1 = "eu-west-1a"
+        eu-central-1 = "eu-central-1a"
         sa-east-1 = "sa-east-1a"
     }
 }
@@ -31,6 +32,7 @@ variable "cf2_az" {
         ap-southeast-1 = "ap-southeast-1b"
         ap-southeast-2 = "ap-southeast-2b"
         eu-west-1 = "eu-west-1b"
+        eu-central-1 = "eu-central-1b"
         sa-east-1 = "sa-east-1b"
     }
 }
@@ -63,6 +65,7 @@ variable "aws_centos_ami" {
         ap-southeast-1 = "ami-dcbeed8e"
         ap-southeast-2 = "ami-89e88db3"
         eu-west-1 = "ami-af6faad8"
+        eu-central-1 = "ami-12ccfa0f"
         sa-east-1 = "ami-73ee416e"
     }
 }
@@ -76,6 +79,7 @@ variable "aws_ubuntu_ami" {
         ap-southeast-1 = "ami-2ce7c07e"
         ap-southeast-2 = "ami-1f117325"
         eu-west-1 = "ami-f6b11181"
+        eu-central-1 = "ami-423c0a5f"
         sa-east-1 = "ami-71d2676c"
     }
 }
