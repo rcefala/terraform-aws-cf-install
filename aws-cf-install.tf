@@ -5,7 +5,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source = "github.com/cloudfoundry-community/terraform-aws-vpc"
+  source = "github.com/rcefala/terraform-aws-vpc"
   network = "${var.network}"
   aws_key_name = "${var.aws_key_name}"
   aws_access_key = "${var.aws_access_key}"
