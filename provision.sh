@@ -163,6 +163,21 @@ address:
   ip: ${boshDirectorHost}
 EOF
 
+# Patch aki_picker.rb: https://github.com/cloudfoundry/bosh/issues/755
+PATCHDIR="$HOME/aki_picker_patch"
+WORKSPACEDIR=$(dirname $(find $HOME/.rvm/gems -name aki_picker.rb))
+rm -fr $PATCHDIR
+git clone https://gist.github.com/e046bc9e5ed9e2d5c76d.git $PATCHDIR
+cd $WORKSPACEDIR
+set +e
+patch -N --dry-run --silent < ${PATCHDIR}/aki_picker.patch 2>/dev/null
+if [ $? -eq 0 ]; then #apply patch only if needed
+    patch < ${PATCHDIR}/aki_picker.patch
+fi
+set -e
+cd -
+rm -fr $PATCHDIR
+
 if [[ ! -d "$HOME/workspace/deployments/microbosh/deployments" ]]; then
   bosh bootstrap deploy
 fi
